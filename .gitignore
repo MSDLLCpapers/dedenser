@@ -1,0 +1,6 @@
+#Gitnore 
+*.pyc
+**/__pycache__
+docs/_*/
+build/
+dist/
