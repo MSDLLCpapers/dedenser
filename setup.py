@@ -4,8 +4,7 @@ import sys
 import setuptools
 from setuptools import setup , find_packages
 
-with open("README.md", "r") as fh:
-    long_description = fh.read()
+long_description = 'Dedenser A Python tool for creating and downsampling chemical pointclouds.\n Software developed by MSD, https://www.msd.com.'
 
 
 
@@ -80,14 +79,15 @@ if package_data is None:
     package_data = find_package_data(packages)
 
 
-install_requires=['numpy','pandas','openpyxl', 'mordred', 'rdkit', 'scikit-learn', 'alphashape', 'scipy',
-					'point-cloud-utils', 'umap-learn', 'matplotlib',  'future']
+install_requires=['numpy','pandas','openpyxl', 'mordred>=1.2.0', 'rdkit', 'scikit-learn==1.3.0', 'alphashape==1.3.1', 'scipy>=1.10.1',
+					'point-cloud-utils==0.30.4', 'umap-learn>=0.5.5', 'matplotlib',  'future']
 
 setup(
-	name = 'Dedenser',
+	name = 'dedenser',
 	description = 'An application for downsampling chemical point clouds.',
     long_description = long_description,
-	version = '0.10',
+	version = '0.10b',
+    url='https://github.com/MSDLLCpapers/dedenser',
 	packages = find_packages(),
     install_requires = install_requires,
     author = 'Armen G. Beck',
@@ -100,15 +100,13 @@ setup(
 			]
 		},
 	classifiers=[
-		"Development Status :: Beta",
+		"Development Status :: 4 - Beta",
 		"Environment :: Console",
-		"Intended Audience :: Chemists",
 		"Intended Audience :: Science/Research",
 		"License :: OSI Approved :: BSD License",
 		"Operating System :: Microsoft :: Windows",
 		"Operating System :: Unix",
 		"Programming Language :: Python :: 3",
-		"Topic :: Scientific/Engineering",
-		"Topic :: Cheminformatics",
+		"Topic :: Scientific/Engineering :: Chemistry"
     	]
 	)
