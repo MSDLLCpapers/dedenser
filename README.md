@@ -1,7 +1,7 @@
 # Dedenser
 A Python tool for creating and downsampling chemical pointclouds.
 
-## Overview
+![toc](data/TOC-4-Final.tif)
 
 ## Dependencies
 We recommend installing the necessary packages individualy if running Dedenser from source.  Otherwise, YMLs with conda enviornments are provided in `envs`.
@@ -17,6 +17,13 @@ We recommend installing the necessary packages individualy if running Dedenser f
 * scikit-learn
 * scipy
 * umap-learn
+
+##Installation
+Dedenser can be installed from PyPI with the command:
+
+```
+pip install dedenser
+```
 
 ## Using Dedenser
 Dedenser is packaged and writen with the intent of being used as a comand line interface tool.  Although those who wish may utilise the code as they see fit, this tutorial should serve to assist those using the comand line interface functions.
