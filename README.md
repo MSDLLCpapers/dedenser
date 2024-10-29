@@ -1,7 +1,7 @@
 # Dedenser
 A Python tool for creating and downsampling chemical pointclouds.
 
-![toc](data/TOC-4-FInal.tif)
+![toc](data/TOC-web.gif)
 
 ## Dependencies
 We recommend installing the necessary packages individualy if running Dedenser from source.  Otherwise, YMLs with conda enviornments are provided in `envs`.
