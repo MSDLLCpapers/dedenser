@@ -18,7 +18,7 @@ We recommend installing the necessary packages individualy if running Dedenser f
 * scipy
 * umap-learn
 
-##Installation
+## Installation
 Dedenser can be installed from PyPI with the command:
 
 ```
