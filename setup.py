@@ -80,7 +80,7 @@ if package_data is None:
 
 
 install_requires=['numpy>=1.24.4','pandas','openpyxl', 'mordred>=1.2.0', 'rdkit', 'scikit-learn>=1.3.0', 'alphashape>=1.3.1', 'scipy>=1.10.1',
-					'point-cloud-utils==0.30.4', 'umap-learn>=0.5.5', 'matplotlib',  'future', 'plotly']
+					'point-cloud-utils==0.30.4', 'umap-learn>=0.5.5', 'matplotlib',  'future', 'plotly', 'dash']
 
 setup(
 	name = 'dedenser',

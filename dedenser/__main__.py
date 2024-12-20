@@ -235,8 +235,7 @@ def main():
         if clickData is None:
             return ''
         
-        # Extracting the relevant data from clickData
-        point_info = clickData['points'][0]  # Get the first point data
+        point_info = clickData['points'][0] 
 
         # Extract UMAP coordinates
         umap_1 = point_info['x']
@@ -282,21 +281,19 @@ def main():
         Output('basic-interactions', 'figure'),
         Output('update-button', 'n_clicks'),
         Input('update-button', 'n_clicks'),
-        Input('d-input', 'value'),  # Get the input value for Target
-        Input('m-input', 'value'),  # Get the input value for Min. Size
+        Input('d-input', 'value'),  
+        Input('m-input', 'value'),  
         Input('e-input', 'value'),
         Input('strict-options', 'value'),
         Input('w-options', 'value'), 
         Input('weight', 'value'), 
         Input('basic-interactions', 'figure'),
-        prevent_initial_call=True,    # Get the input value for Epsilon
+        prevent_initial_call=True,    
     )
     def update_plot(n_clicks, t_value, m_value, e_value, s_value, w_bool, w_val, figure):
         # Validate that all input values are provided
-        print(t_value,m_value,e_value)
         if not n_clicks is None:
             if n_clicks > 0 and None not in (t_value, m_value, e_value):
-                print('hello')
                 d_weight,v_weight = None, None
                 if s_value == 'STRICT2':
                     strict = True
@@ -335,9 +332,7 @@ def main():
                 return fig, None
             return figure, None
         else:
-            print(figure)
             return figure, None
-        print('did not return right')
             
     @app.callback(
         Output('rdkit-display', 'src'),

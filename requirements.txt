@@ -3,6 +3,7 @@ click==8.1.7
 click-log==0.4.0
 contourpy==1.1.1
 cycler==0.12.1
+dash==2.18.2
 et-xmlfile==1.1.0
 fonttools==4.47.2
 importlib-metadata==7.0.1

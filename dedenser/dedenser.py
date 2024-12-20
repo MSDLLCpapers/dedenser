@@ -101,7 +101,6 @@ class Dedenser( ):
     def __init__(self,data=None, target=.5, random_seed=1, alpha=False, 
                  min_size = 5, d_weight = None, v_weight = None, epsilon=0.0,
                  strict=False, show=False, GUI=False):
-        print(len(data[0]))
         if target in (0, 1):
             raise ValueError(f'Target can not be {target}.')
         if target > 1 or target < 0:

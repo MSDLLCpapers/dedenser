@@ -197,3 +197,17 @@ python -m dedenser dedense -dw -200 --SHOW -o data/ZINC_sc_d30w-200 -t 0.3 data/
 ![clust](data/sc_clust_down_w-200.svg)
 
 The weighting may require some manual tuning depending on what is desired by the user.
+
+## Dash-app
+
+A dash-app can be locally hosted and used to test and visualize various downsampling parameters.
+
+The command for intializing the dash-app is:
+
+```
+python -m dedenser Dash-app c data/doyle_cloud.npy data/doyle_cloud.csv
+Dash is running on http://127.0.0.1:8050/
+```
+
+The app is then ready to be used in a web browser of choosing:
+![dash](data/dash-app.png)
