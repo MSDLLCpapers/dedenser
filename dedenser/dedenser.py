@@ -100,18 +100,20 @@ class Dedenser( ):
     """
     def __init__(self,data=None, target=.5, random_seed=1, alpha=False, 
                  min_size = 5, d_weight = None, v_weight = None, epsilon=0.0,
-                 strict=False, show=False,):
+                 strict=False, show=False, GUI=False):
+        print(len(data[0]))
         if target in (0, 1):
             raise ValueError(f'Target can not be {target}.')
         if target > 1 or target < 0:
             raise ValueError(f'Target must be between 0 & 1.\
                                User provided {target}')
+        if data.shape[1] != 3:
+            if show:
+                raise ValueError('Visualization with high dimensional data is not supported.')
         self.n_target = target * len(data)
         self.data = np.array(data)
-        if data.shape[1] != 3:
-            raise ValueError("Data must have shape (N, 3).")
-        if not np.issubdtype(data.dtype, np.number):
-            raise ValueError("Data must contain numerics.")
+        #if not np.issubdtype(data.dtype, np.number):  \\this isnt for kids anymore\\
+        #    raise ValueError("Data must contain numerics.")
         self.Strict = strict
         self.random_seed = random_seed
         self.alpha = alpha
@@ -129,6 +131,7 @@ class Dedenser( ):
         if self.v_weight != None or self.d_weight != None:
             self.Weighted = True
         self.Show = show
+        self.GUI = GUI
 
     def start(self):
         """Performs clustering and calculates cluster volumes."""
@@ -168,6 +171,7 @@ class Dedenser( ):
             plt.tight_layout()
             #plt.savefig('data/initial_cloud.svg',dpi=1000)
             plt.show()
+        print('done start')
 
     def check_state(self):
         """Cheks the state after using HDBSCAN.
@@ -353,6 +357,8 @@ class Dedenser( ):
                 else:
                     ax.scatter([], [], [],s=.3)
             plt.tight_layout()
-            #plt.savefig('data/downsampled_cloud.svg',dpi=1000)
+            #plt.savefig('data/downsampled_cloud.tif',dpi=1000)
             plt.show()
+        if self.GUI:
+            return list(set(self.keep_list)), self.clusters
         return list(set(self.keep_list))

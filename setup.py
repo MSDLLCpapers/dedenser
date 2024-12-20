@@ -79,14 +79,14 @@ if package_data is None:
     package_data = find_package_data(packages)
 
 
-install_requires=['numpy>=1.24.4','pandas','openpyxl', 'mordred>=1.2.0', 'rdkit', 'scikit-learn>=1.3.0', 'alphashape==1.3.1', 'scipy>=1.10.1',
-					'point-cloud-utils==0.30.4', 'umap-learn>=0.5.5', 'matplotlib',  'future']
+install_requires=['numpy>=1.24.4','pandas','openpyxl', 'mordred>=1.2.0', 'rdkit', 'scikit-learn>=1.3.0', 'alphashape>=1.3.1', 'scipy>=1.10.1',
+					'point-cloud-utils==0.30.4', 'umap-learn>=0.5.5', 'matplotlib',  'future', 'plotly']
 
 setup(
 	name = 'dedenser',
 	description = 'An application for downsampling chemical point clouds.',
     long_description = long_description,
-	version = '0.11b',
+	version = '0.12',
     url='https://github.com/MSDLLCpapers/dedenser',
 	packages = find_packages(),
     install_requires = install_requires,
