@@ -207,7 +207,7 @@ A dash-app can be locally hosted and used to test and visualize various downsamp
 The command for intializing the dash-app is:
 
 ```
-python -m dedenser Dash-app c data/doyle_cloud.npy data/doyle_cloud.csv
+python -m dedenser Dash-app -c data/doyle_cloud.npy data/doyle_cloud.csv
 Dash is running on http://127.0.0.1:8050/
 ```
 
