@@ -17,6 +17,8 @@ We recommend installing the necessary packages individualy if running Dedenser f
 * scikit-learn
 * scipy
 * umap-learn
+* plotly
+* dash
 
 ## Installation
 Dedenser can be installed from PyPI with the command:
