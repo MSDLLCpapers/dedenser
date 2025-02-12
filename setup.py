@@ -86,7 +86,7 @@ setup(
 	name = 'dedenser',
 	description = 'An application for downsampling chemical point clouds.',
     long_description = long_description,
-	version = '0.12',
+	version = '1.00',
     url='https://github.com/MSDLLCpapers/dedenser',
 	packages = find_packages(),
     install_requires = install_requires,
