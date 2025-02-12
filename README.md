@@ -17,6 +17,8 @@ We recommend installing the necessary packages individualy if running Dedenser f
 * scikit-learn
 * scipy
 * umap-learn
+* plotly
+* dash
 
 ## Installation
 Dedenser can be installed from PyPI with the command:
@@ -205,7 +207,7 @@ A dash-app can be locally hosted and used to test and visualize various downsamp
 The command for intializing the dash-app is:
 
 ```
-python -m dedenser Dash-app c data/doyle_cloud.npy data/doyle_cloud.csv
+python -m dedenser Dash-app -c data/doyle_cloud.npy data/doyle_cloud.csv
 Dash is running on http://127.0.0.1:8050/
 ```
 
