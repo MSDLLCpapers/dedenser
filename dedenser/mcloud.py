@@ -30,7 +30,7 @@ def drop_non_numeric_columns(df):
 
 
 def make_cloud(path, path_out="cloud_out", sep=",", position=0, exl=False, heady=False,
-               random_state=21):
+               random_state=21, output=False,):
     """
     Featurize SMILES strings, perform dimensionality reduction using UMAP and save
     the resulting chemical point cloud.  Mordred descriptors that result in errors
@@ -59,6 +59,9 @@ def make_cloud(path, path_out="cloud_out", sep=",", position=0, exl=False, heady
 
     random_state : int, default=21
         Seed used as random_state for UMAP.
+
+    output : bool, default=False
+        Indicates if the function return the point clouds (besides saving to disk).
 
     Returns
     -------
@@ -102,6 +105,8 @@ def make_cloud(path, path_out="cloud_out", sep=",", position=0, exl=False, heady
     df.to_csv(f"{path_out}.csv", index=False)
     print(f"Done! Saved chemical point cloud at '{path_out}.npy'.")
     print(f"Saved 2D descriptors at '{path_out}.csv'.")
+
+    return cloud if output else None
 
 
 def see_cloud(f_out, points, save=False):
