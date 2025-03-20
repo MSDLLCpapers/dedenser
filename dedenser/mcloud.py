@@ -29,7 +29,8 @@ def drop_non_numeric_columns(df):
     return df_out
 
 
-def make_cloud(path, path_out="cloud_out", sep=",", position=0, exl=False, heady=False):
+def make_cloud(path, path_out="cloud_out", sep=",", position=0, exl=False, heady=False,
+               random_state=21):
     """
     Featurize SMILES strings, perform dimensionality reduction using UMAP and save
     the resulting chemical point cloud.  Mordred descriptors that result in errors
@@ -55,6 +56,9 @@ def make_cloud(path, path_out="cloud_out", sep=",", position=0, exl=False, heady
 
     heady : bool, default=False
         Indicates if there is a header in the input SMILES file.
+
+    random_state : int, default=21
+        Seed used as random_state for UMAP.
 
     Returns
     -------
@@ -90,7 +94,8 @@ def make_cloud(path, path_out="cloud_out", sep=",", position=0, exl=False, heady
     print("Loading UMAP and embedding chemical point cloud...")
     from umap import UMAP
 
-    reducer = UMAP(n_components=3, min_dist=0.1, spread=0.5, n_neighbors=15)
+    reducer = UMAP(n_components=3, min_dist=0.1, spread=0.5, n_neighbors=15,
+                   random_state=random_state)
     cloud = reducer.fit_transform(s_vals)
     np.save(path_out, cloud)
     df.insert(0, "SMILES", new_column)
