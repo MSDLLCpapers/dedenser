@@ -1,8 +1,6 @@
 import argparse
 from .mcloud import *
 import subprocess
-import numpy as np
-import pandas as pd
 from dash import Dash, dcc, html, Input, Output, callback
 
 
@@ -33,6 +31,8 @@ def cli():
 
 
 def main():
+    import numpy as np
+    import pandas as pd
     valid = ['dedense','mkcloud','vis', 'mksheet', 'Dash-app']
     args = cli() # get user inputs from command line
     funct = args.command
@@ -343,7 +343,10 @@ def main():
                 smile_string = selectedData['points'][0]['customdata'][0]
                 return create_mol_plot(smile_string)
             
-        app.run_server(debug=True)
+        try:
+            app.run_server(debug=True)
+        except:
+            app.run(debug=True)
 
 
 def generate_colors(int_list):
